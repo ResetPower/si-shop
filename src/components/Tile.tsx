@@ -4,9 +4,11 @@ import Button from "./Button";
 import { MdClose } from "react-icons/md";
 import Tag from "./Tag";
 import { cart } from "../inventory/cart";
+import Counter from "./Counter";
 
 export default function Tile(props: {
   prod: Product;
+  amount: number;
   onUpdate?: () => unknown;
 }) {
   const prod = props.prod;
@@ -28,6 +30,7 @@ export default function Tile(props: {
         </Link>
         <div className="text-sm">&yen; {prod.price}</div>
         <Tag>{prod.tag}</Tag>
+        <div className="flex justify-center"><Counter id={prod.id} /></div>
         <div className="text-sm text-gray-500">{prod.description}</div>
       </div>
       <div>

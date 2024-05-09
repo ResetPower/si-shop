@@ -8,10 +8,10 @@ export default function CartPage() {
 
   return (
     <div>
-      {cart.products.map((prodId, index) => (
-        <Tile onUpdate={forceUpdate} key={index} prod={repo.find(prodId)!} />
+      {cart.availableProducts.map((item, index) => (
+        <Tile onUpdate={forceUpdate} amount={item.amount} key={index} prod={repo.find(item.id)!} />
       ))}
-      {cart.products.length === 0 && (
+      {cart.availableProducts.length === 0 && (
         <div className="text-center p-3">购物车中还没有商品呢🤔。</div>
       )}
     </div>

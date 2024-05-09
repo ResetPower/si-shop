@@ -12,8 +12,8 @@ export default function Highlight(props: {
   return (
     <div onClick={props.onClick} className={props.className}>
       {words.map((word, index) => (
-        <Fragment>
-          <span key={index}>{word}</span>
+        <Fragment key={index}>
+          <span>{word}</span>
           {index !== words.length - 1 && (
             <span className="text-red-500">{props.keyword}</span>
           )}

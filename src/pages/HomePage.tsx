@@ -14,14 +14,14 @@ export default function HomePage() {
     <div className="p-3">
       <div className="p-3">
         <div className="flex items-center space-x-2">
-          <Input ref={ref} placeholder="搜索" />
+          <Input onEnter={forceUpdate} ref={ref} placeholder="搜索" />
           <Button onClick={forceUpdate}>
             <MdSearch />
             搜索
           </Button>
         </div>
         <div className="text-xs">
-          清空搜索框内容以显示全部产品，按搜索键以更新搜索关键词。
+          清空搜索框内容以显示全部产品，按搜索键或回车键以更新搜索关键词。
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">

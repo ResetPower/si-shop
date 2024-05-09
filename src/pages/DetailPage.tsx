@@ -6,6 +6,7 @@ import { cart } from "../inventory/cart";
 import NotFoundPng from "../assets/NotFound.png";
 import Tag from "../components/Tag";
 import { useForceUpdate } from "../utils";
+import Counter from "../components/Counter";
 
 export default function DetailPage() {
   const params = useParams();
@@ -23,13 +24,14 @@ export default function DetailPage() {
         <div className="text-sm">ID #{prod.id}</div>
         <div className="text-gray-500">{prod.description}</div>
         <div className="flex flex-wrap">
-          {cart.has(prod.id) && (
+          {cart.find(prod.id) && (
             <div className="text-sm flex text-green-500 items-center">
               <MdCheck />
               已加入购物车。
             </div>
           )}
           <div className="flex-grow" />
+          <Counter id={prod.id} />
           <Button
             onClick={() => {
               cart.add(prod.id);
