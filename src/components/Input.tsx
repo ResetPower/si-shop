@@ -7,7 +7,6 @@ const Input = forwardRef(
       placeholder?: string;
       value?: string;
       onChange?: (newValue: string) => unknown;
-      onEnter?: () => unknown;
     },
     ref: LegacyRef<HTMLInputElement>
   ) => {
@@ -17,9 +16,6 @@ const Input = forwardRef(
         value={props.value}
         onChange={(e) => props.onChange && props.onChange(e.target.value)}
         ref={ref}
-        onKeyDown={props.onEnter && ((e) => {
-          if (e.key === "Enter" && props.onEnter) props.onEnter();
-        })}
         className={concat(
           "block w-full p-2.5",
           "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg",
