@@ -14,7 +14,7 @@ export default function AppBar() {
       <div className="flex-grow" />
       <AppBarItem to="/invoice">订单</AppBarItem>
       <AppBarItem to="/cart">购物车</AppBarItem>
-      <AppBarItem to="/404">404</AppBarItem>
+      <AppBarItem to="/404">不存在的页面</AppBarItem>
       <AppBarItem to="/about">关于</AppBarItem>
       <a
         className="hover:text-sky-700 transition colors"
