@@ -23,6 +23,10 @@ export default function HomePage() {
           </Button>
         </div>
       </div>
+      <div className="rounded p-3 m-3 bg-sky-400 text-white">
+        <div className="text-lg font-semibold">公告</div>
+        <div className="text-sm">公告内容。</div>
+      </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
         {query
           ? repo.products
