@@ -10,13 +10,13 @@ import prod7Jpg from "../assets/7.jpg";
 
 class Repository {
   products: Product[] = [
-    ...["金色"].map(
+    ...["金色", "红绿蓝色"].map(
       (color, index) =>
         ({
           id: 39 + index,
           name: `36cm ${color}中国龙`,
           description:
-            "感觉握在手上就很安心，当摆件真的很不错。可选金色，红绿色三色。推荐红绿蓝，渐变效果真的很帅=-=。",
+            "感觉握在手上就很安心，当摆件真的很不错。可选金色，红绿蓝色。推荐红绿蓝，渐变效果真的很帅=-=。",
           price: 13,
           tag: "normal",
           photo: prod7Jpg,

@@ -15,7 +15,7 @@ export default function PurchasePage() {
   const onComplete = () => {
     if (inv) {
       inv.payment = payment;
-      fetch("http://server.si-hzyz.club:2954/invoice", {
+      fetch("https://server.si-hzyz.club:2954/invoice", {
         method: "POST",
         body: JSON.stringify(inv),
         headers: {
