@@ -25,6 +25,9 @@ export default function HomePage() {
       </div>
       <div className="rounded p-3 m-3 bg-sky-400 text-white">
         <div className="text-lg font-semibold">公告</div>
+        <div className="text-red-100">
+          ⚠️注意：本周日（5月12日）下午13:00准时闭站，请及时购买😋。
+        </div>
         <div className="font-semibold">关于配送</div>
         <div className="text-sm">
           <div>
