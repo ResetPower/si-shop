@@ -106,7 +106,7 @@ class Repository {
           id: 25 + index,
           name: `23cm ${color}翼龙`,
           description:
-            "好帅的翼龙啊啊啊啊。从左至右颜色为丝绸蓝绿，丝绸红蓝，丝绸红金。还可选择丝绸红绿蓝，丝绸金。",
+            "好帅的翼龙啊啊啊啊。从左至右颜色为丝绸红蓝，丝绸蓝绿，丝绸红金。还可选择丝绸红绿蓝，丝绸金。",
           price: 15,
           tag: "normal",
           photo: prod4Jpg,
