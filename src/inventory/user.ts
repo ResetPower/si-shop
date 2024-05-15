@@ -18,3 +18,7 @@ export const userInfo: UserInfo = primitiveInfo
 export function applyChanges() {
   localStorage.setItem("userinfo", JSON.stringify(userInfo));
 }
+
+export function isUserInfoComplete() {
+  return userInfo.clazz && userInfo.grade && userInfo.name;
+}

@@ -25,9 +25,6 @@ export default function HomePage() {
       </div>
       <div className="rounded p-3 m-3 bg-sky-400 text-white">
         <div className="text-lg font-semibold">公告</div>
-        <div className="text-red-100">
-          ⚠️注意：本周日（5月12日）下午13:00准时闭站，请及时购买😋。
-        </div>
         <div className="font-semibold">关于配送</div>
         <div className="text-sm">
           <div>
@@ -50,27 +47,6 @@ export default function HomePage() {
         <div className="font-semibold">关于 3D 代打服务</div>
         <div className="text-sm">需要 3D 代打服务联系：MELLO-VOURRY</div>
         <div className="font-semibold">关于下单</div>
-        <div className="text-sm">
-          <div>请在下单前确认下单信息已正确填写并保存</div>
-          <div>
-            若网页刷新后再打开下单页面后下单页面上仍显示正确的下单信息则说明下单信息已正确保存
-          </div>
-          <div>
-            点击下单按钮后请仔细核对订单内容，确认全部
-            <span className="font-semibold">准确无误</span>后再扫描二维码付款
-          </div>
-          <div>
-            付款后将转账单号<span className="font-semibold">准确无误</span>
-            地填写在指定文本框中并点击「上传」
-          </div>
-          <div>
-            未完成支付时请勿关闭订单待支付页面
-            已完成支付的情况下请勿点击取消支付
-          </div>
-          <div>
-            如果网站刷新后在「订单」页能看到订单已支付，则说明订单上传成功
-          </div>
-        </div>
         <div className="text-sm">
           包括但不限于网站出现异常现象、网站行为与描述和（或）预期不符、误操作、订单系统出现需要人工解决的问题、有关于网站和下单系统的疑问等情况请联系：resetpower
         </div>

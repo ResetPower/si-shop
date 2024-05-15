@@ -3,6 +3,7 @@ import repo from "./repo";
 export interface CartItem {
   id: number;
   amount: number;
+  variant?: string;
   isInCart: boolean;
 }
 

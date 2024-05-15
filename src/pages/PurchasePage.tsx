@@ -49,7 +49,7 @@ export default function PurchasePage() {
       <div>
         扫描下方二维码付款后将转账单号准确无误地填写在上方文本框中并点击完成。
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mb-3">
         <Button onClick={onComplete}>完成</Button>
         {loading === -2 && (
           <div>❌订单上传失败，可能是网络问题或服务器宕机。</div>

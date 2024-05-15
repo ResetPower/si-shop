@@ -5,13 +5,17 @@ import { MdAdd, MdCheck } from "react-icons/md";
 import { cart } from "../inventory/cart";
 import NotFoundPng from "../assets/NotFound.png";
 import Tag from "../components/Tag";
-import { useForceUpdate } from "../utils";
+import { concat, useForceUpdate } from "../utils";
 import Counter from "../components/Counter";
+import { useState } from "react";
 
 export default function DetailPage() {
   const params = useParams();
   const prod = repo.find(parseInt(params.id ?? "-1"));
   const forceUpdate = useForceUpdate();
+  const [variant, setVariant] = useState(
+    prod?.variants ? prod?.variants[0] : String()
+  );
 
   return prod ? (
     <div className="flex p-3 space-x-3">
@@ -22,7 +26,24 @@ export default function DetailPage() {
           <Tag>{prod.tag}</Tag>
         </div>
         <div className="text-sm">ID #{prod.id}</div>
+        {variant && <div className="font-medium">已选：{variant}</div>}
         <div className="text-gray-500">{prod.description}</div>
+        {prod.variants && (
+          <div className="flex flex-wrap space-x-3">
+            {prod.variants.map((value, index) => (
+              <button
+                onClick={() => setVariant(value)}
+                className={concat(
+                  "rounded border px-3 py-1",
+                  variant === value && "bg-blue-200"
+                )}
+                key={index}
+              >
+                {value}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="flex flex-wrap">
           {cart.find(prod.id) && (
             <div className="text-sm flex text-green-500 items-center">
