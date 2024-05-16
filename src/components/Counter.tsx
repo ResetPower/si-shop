@@ -1,4 +1,4 @@
-import { MouseEventHandler, ReactNode, useState } from "react";
+import { MouseEventHandler, ReactNode, useEffect, useState } from "react";
 import { MdAdd, MdRemove } from "react-icons/md";
 import { cart } from "../inventory/cart";
 
@@ -16,15 +16,17 @@ function CounterButton(props: {
   );
 }
 
-export default function Counter(props: { id: number }) {
-  const item = cart.find(props.id);
+export default function Counter(props: { id: number; variant: string }) {
+  const item = cart.find(props.id, props.variant);
   const [value, setValue] = useState(item?.amount ?? 1);
   const updateValue = (newValue: number) => {
-    cart.updateAmount(props.id, newValue);
+    cart.updateAmount(props.id, newValue, props.variant);
     setValue(newValue);
   };
   const onIncrease = () => value < 100 && updateValue(value + 1);
   const onDecrease = () => value > 1 && updateValue(value - 1);
+
+  useEffect(() => setValue(item?.amount ?? 1), [props.variant]);
 
   return (
     <div className="border flex items-center w-16">

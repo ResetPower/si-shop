@@ -45,6 +45,7 @@ export default function CartPage() {
           onUpdate={forceUpdate}
           amount={item.amount}
           key={index}
+          variant={item.variant}
           prod={repo.find(item.id)!}
         />
       ))}

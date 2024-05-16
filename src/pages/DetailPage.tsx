@@ -32,7 +32,9 @@ export default function DetailPage() {
           <div className="flex flex-wrap space-x-3">
             {prod.variants.map((value, index) => (
               <button
-                onClick={() => setVariant(value)}
+                onClick={() => {
+                  setVariant(value);
+                }}
                 className={concat(
                   "rounded border px-3 py-1",
                   variant === value && "bg-blue-200"
@@ -45,17 +47,17 @@ export default function DetailPage() {
           </div>
         )}
         <div className="flex flex-wrap">
-          {cart.find(prod.id) && (
+          {cart.findInCart(prod.id, variant) && (
             <div className="text-sm flex text-green-500 items-center">
               <MdCheck />
               已加入购物车。
             </div>
           )}
           <div className="flex-grow" />
-          <Counter id={prod.id} />
+          <Counter id={prod.id} variant={variant} />
           <Button
             onClick={() => {
-              cart.add(prod.id);
+              cart.add(prod.id, variant);
               forceUpdate();
             }}
             className="m-1"

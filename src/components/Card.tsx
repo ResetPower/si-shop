@@ -10,7 +10,7 @@ export default function Card(props: { prod: Product; keyword?: string }) {
   return (
     <div
       onClick={() => navigate(`/prod/${prod.id}`)}
-      className="hover:shadow-lg rounded border m-3 p-3 space-y-3 cursor-pointer"
+      className="hover:shadow-xl rounded border m-3 p-3 space-y-3 cursor-pointer"
     >
       <img className="rounded" src={prod.photo} />
       <div className="flex items-center flex-wrap">

@@ -6,7 +6,7 @@ export default function AppBar() {
   const navigate = useNavigate();
 
   return (
-    <div className="p-3 flex items-center border-b space-x-3">
+    <div className="p-3 flex flex-wrap items-center border-b space-x-3">
       <button onClick={() => navigate("/")} className="font-medium">
         智信小店
       </button>
@@ -14,7 +14,7 @@ export default function AppBar() {
       <div className="flex-grow" />
       <AppBarItem to="/invoice">订单</AppBarItem>
       <AppBarItem to="/cart">购物车</AppBarItem>
-      <AppBarItem to="/404">不存在的页面</AppBarItem>
+      <AppBarItem to="/404">？</AppBarItem>
       <AppBarItem to="/about">关于</AppBarItem>
       <a
         className="hover:text-sky-700 transition colors"

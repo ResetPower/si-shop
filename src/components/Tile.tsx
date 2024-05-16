@@ -8,6 +8,7 @@ import Counter from "./Counter";
 
 export default function Tile(props: {
   prod: Product;
+  variant: string;
   amount: number;
   onUpdate?: () => unknown;
 }) {
@@ -19,19 +20,25 @@ export default function Tile(props: {
   };
 
   return (
-    <div className="shadow rounded border flex m-3 p-3 space-y-3 items-center">
+    <div className="shadow rounded border flex m-3 p-3 items-center">
       <img className="w-32 h-32 rounded" src={prod.photo} />
-      <div className="flex-grow text-center">
-        <Link
-          to={`/prod/${prod.id}`}
-          className="font-medium hover:text-blue-500 transition-colors"
-        >
-          {prod.name}
-        </Link>
-        <div className="text-sm">&yen; {prod.price}</div>
-        <Tag>{prod.tag}</Tag>
-        <div className="flex justify-center"><Counter id={prod.id} /></div>
-        <div className="text-sm text-gray-500">{prod.description}</div>
+      <div className="flex-grow flex flex-wrap items-center p-3">
+        <div className="flex-grow">
+          <div className="flex flex-wrap space-x-3 items-center">
+            <Link
+              to={`/prod/${prod.id}`}
+              className="font-medium hover:text-blue-500 transition-colors"
+            >
+              {prod.name} / {props.variant}
+            </Link>
+            <Tag>{prod.tag}</Tag>
+          </div>
+        </div>
+        <div className="">
+          <div className="text-sm">单价：&yen; {prod.price}</div>
+          <div className="text-sm">总价：&yen; {props.amount * prod.price}</div>
+          <Counter id={prod.id} variant={props.variant} />
+        </div>
       </div>
       <div>
         <Button onClick={onRemove}>

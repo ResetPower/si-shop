@@ -3,7 +3,7 @@ import repo from "./repo";
 export interface CartItem {
   id: number;
   amount: number;
-  variant?: string;
+  variant: string;
   isInCart: boolean;
 }
 
@@ -19,24 +19,31 @@ class Cart {
   get availableProducts() {
     return this.products.filter((item) => item.isInCart);
   }
-  find(id: number) {
-    return this.products.find((item) => item.id === id);
+  find(id: number, variant: string) {
+    return this.products.find(
+      (item) => item.id === id && item.variant === variant
+    );
   }
-  add(id: number) {
-    const item = this.find(id);
+  findInCart(id: number, variant: string) {
+    return this.availableProducts.find(
+      (item) => item.id === id && item.variant === variant
+    );
+  }
+  add(id: number, variant: string) {
+    const item = this.find(id, variant);
     if (item) {
       item.isInCart = true;
     } else {
-      this.products.push({ id, amount: 1, isInCart: true });
+      this.products.push({ id, amount: 1, isInCart: true, variant });
     }
     this.saveChanges();
   }
-  updateAmount(id: number, amount: number) {
-    const item = this.find(id);
+  updateAmount(id: number, amount: number, variant: string) {
+    const item = this.find(id, variant);
     if (item) {
       item.amount = amount;
     } else {
-      this.products.push({ id, amount, isInCart: false });
+      this.products.push({ id, amount, isInCart: false, variant });
     }
     this.saveChanges();
   }

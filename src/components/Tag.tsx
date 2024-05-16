@@ -5,7 +5,7 @@ export default function Tag(props: { children: ProductTag }) {
 
   return (
     <div
-      className={`text-xs inline-block font-medium text-white rounded ${isNormal ? "bg-green-500" : "bg-red-500"} py-0.5 px-1`}
+      className={`text-xs whitespace-nowrap inline-block font-medium text-white rounded ${isNormal ? "bg-green-500" : "bg-red-500"} py-0.5 px-1`}
     >
       {isNormal ? "正常品" : "残次品"}
     </div>
