@@ -19,6 +19,21 @@ export function applyChanges() {
   localStorage.setItem("userinfo", JSON.stringify(userInfo));
 }
 
+export function updateUserGrade(grade: string) {
+  userInfo.grade = grade;
+  applyChanges();
+}
+
+export function updateUserClazz(clazz: string) {
+  userInfo.clazz = clazz;
+  applyChanges();
+}
+
+export function updateUserName(name: string) {
+  userInfo.name = name;
+  applyChanges();
+}
+
 export function isUserInfoComplete() {
   return userInfo.clazz && userInfo.grade && userInfo.name;
 }

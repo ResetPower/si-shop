@@ -24,6 +24,9 @@ class InvoiceStore {
     this.saveChanges();
     return id;
   }
+  cancel(invoice: Invoice) {
+    this.invoices = this.invoices.filter((inv) => inv !== invoice);
+  }
   find(id: string) {
     return this.invoices.find((inv) => inv.id === id);
   }

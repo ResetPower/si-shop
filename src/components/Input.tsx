@@ -6,6 +6,7 @@ const Input = forwardRef(
     props: {
       placeholder?: string;
       value?: string;
+      initial?: string;
       onChange?: (newValue: string) => unknown;
     },
     ref: LegacyRef<HTMLInputElement>
@@ -14,6 +15,7 @@ const Input = forwardRef(
       <input
         placeholder={props.placeholder}
         value={props.value}
+        defaultValue={props.initial}
         onChange={(e) => props.onChange && props.onChange(e.target.value)}
         ref={ref}
         className={concat(
