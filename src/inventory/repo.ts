@@ -13,6 +13,22 @@ import prod9Jpg from "../assets/9.jpg";
 class Repository {
   products: Product[] = [
     {
+      id: 10,
+      name: "夜光水晶龙 (不含龙蛋)",
+      description: "用紫光灯照一下就会发光ヾ(@^▽^@)ノ 无紫光灯照射下为白色",
+      price: 16,
+      tag: "normal",
+      photo: prod8Jpg,
+    },
+    {
+      id: 11,
+      name: "夜光龙蛋 (不含水晶龙)",
+      description: "用紫光灯照一下就会发光ヾ(@^▽^@)ノ 无紫光灯照射下为白色",
+      price: 16,
+      tag: "normal",
+      photo: prod8Jpg,
+    },
+    {
       id: 0,
       name: `36cm 中国龙`,
       description:
@@ -128,22 +144,6 @@ class Repository {
         "小蜥蜴",
       ],
       photo: prod6Jpg,
-    },
-    {
-      id: 10,
-      name: "夜光水晶龙 (不含龙蛋)",
-      description: "用紫光灯照一下就会发光ヾ(@^▽^@)ノ 无紫光灯照射下为白色",
-      price: 16,
-      tag: "normal",
-      photo: prod8Jpg,
-    },
-    {
-      id: 11,
-      name: "夜光龙蛋 (不含水晶龙)",
-      description: "用紫光灯照一下就会发光ヾ(@^▽^@)ノ 无紫光灯照射下为白色",
-      price: 16,
-      tag: "normal",
-      photo: prod8Jpg,
     },
     {
       id: 12,
