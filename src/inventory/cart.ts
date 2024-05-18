@@ -11,7 +11,7 @@ class Cart {
   products: CartItem[] = []; // product id
   onChange?: () => unknown;
   constructor() {
-    const saved = localStorage.getItem("cart");
+    const saved = localStorage.getItem("cart1");
     if (saved) {
       this.products = JSON.parse(saved).products;
     }
@@ -55,7 +55,7 @@ class Cart {
     this.onChange = onChange;
   }
   saveChanges() {
-    localStorage.setItem("cart", JSON.stringify(this));
+    localStorage.setItem("cart1", JSON.stringify(this));
     this.onChange && this.onChange();
   }
   calculateTotal() {

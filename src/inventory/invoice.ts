@@ -13,7 +13,7 @@ export interface Invoice {
 class InvoiceStore {
   invoices: Invoice[] = [];
   constructor() {
-    const saved = localStorage.getItem("invoices");
+    const saved = localStorage.getItem("invoices1");
     if (saved) {
       this.invoices = JSON.parse(saved).invoices;
     }
@@ -31,7 +31,7 @@ class InvoiceStore {
     return this.invoices.find((inv) => inv.id === id);
   }
   saveChanges() {
-    localStorage.setItem("invoices", JSON.stringify(this));
+    localStorage.setItem("invoices1", JSON.stringify(this));
   }
 }
 

@@ -7,6 +7,8 @@ import prod4Jpg from "../assets/4.jpg";
 import prod5Jpg from "../assets/5.jpg";
 import prod6Jpg from "../assets/6.jpg";
 import prod7Jpg from "../assets/7.jpg";
+import prod8Jpg from "../assets/8.jpg";
+import prod9Jpg from "../assets/9.jpg";
 
 class Repository {
   products: Product[] = [
@@ -108,20 +110,60 @@ class Repository {
       id: 9,
       name: `5cm 小动物系列`,
       description:
-        "好萌，一口一个。有熊猫，青蛙，海豚，小猪，小鸡，小兔，小龙，小蜜蜂。",
+        "好萌，一口一个。从左上到右下依次为红色小龙，小蜜蜂，小蝙蝠，小兔，小鳄鱼，橙色小狐，小猪，小鸡，小蛙，绿色小恐龙，橙色小恐龙，小蜥蜴。",
       price: 6,
       tag: "normal",
       variants: [
-        "熊猫",
-        "青蛙",
-        "海豚",
+        "红色小龙",
+        "小蜜蜂",
+        "小蝙蝠",
+        "小兔",
+        "小鳄鱼",
+        "橙色小狐",
         "小猪",
         "小鸡",
-        "小兔",
-        "小龙",
-        "小蜜蜂",
+        "小娃",
+        "绿色小恐龙",
+        "橙色小恐龙",
+        "小蜥蜴",
       ],
       photo: prod6Jpg,
+    },
+    {
+      id: 10,
+      name: "夜光水晶龙 (不含龙蛋)",
+      description: "用紫光灯照一下就会发光ヾ(@^▽^@)ノ 无紫光灯照射下为白色",
+      price: 16,
+      tag: "normal",
+      photo: prod8Jpg,
+    },
+    {
+      id: 11,
+      name: "夜光龙蛋 (不含水晶龙)",
+      description: "用紫光灯照一下就会发光ヾ(@^▽^@)ノ 无紫光灯照射下为白色",
+      price: 16,
+      tag: "normal",
+      photo: prod8Jpg,
+    },
+    {
+      id: 12,
+      name: "4cm 龙宝宝摆件普通款",
+      description:
+        "小小一个捏在手里刚刚好，可以定制龙宝宝爪前面端着的字，此页面为普通款。不开口款前字为开运，开口款前字为暴富",
+      price: 6,
+      tag: "normal",
+      variants: ["开口", "不开口"],
+      photo: prod9Jpg,
+    },
+    {
+      id: 13,
+      name: "4cm 龙宝宝摆件定制款",
+      description:
+        "在开口和不开口的基础上可定制文字，限两个字，请在付款时留言备注定制的字，如遇留言框写不下，请添加MELLO-VOURRY说明ヾ(^▽^*)))",
+      price: 8,
+      tag: "normal",
+      variants: ["开口", "不开口"],
+      photo: prod9Jpg,
     },
   ];
   find = (id: number) => {

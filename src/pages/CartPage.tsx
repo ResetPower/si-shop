@@ -49,7 +49,7 @@ export default function CartPage() {
       <div className="rounded p-3 m-3 space-y-3 bg-sky-400 text-white">
         <div className="text-lg font-semibold">下单信息</div>
         <div className="text-sm p-3">
-          <div>点击「下单」前请阁下在此处填写好下单信息。</div>
+          <div>点击「下单」前请在此处填写好下单信息😭。</div>
           <div>
             此行为会下单购物车内的全部商品，且下单完成后购物车不会自动清空。
           </div>
@@ -84,7 +84,7 @@ export default function CartPage() {
           />
         </div>
       </div>
-      {warned && <div className="p-3">阁下必须在上方填写完毕下单信息😡</div>}
+      {warned && <div className="p-3">必须在上方填写完毕下单信息😡</div>}
       <div className="rounded p-3 m-3 space-x-3 text-lg border flex flex-wrap">
         <div>总价</div>
         <div>{total}</div>

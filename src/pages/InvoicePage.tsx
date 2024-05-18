@@ -16,14 +16,14 @@ export default function InvoicePage() {
           <InvoiceInfo invoice={inv} />
           {!inv.payment && (
             <div>
-              此订单未完成，阁下可经由
+              此订单未完成，点击
               <button
                 className="mx-1 text-blue-500 hover:underline"
                 onClick={() => navigate(`/purchase/${inv.id}`)}
               >
                 https://si-hzyz.club/purchase/{inv.id}
               </button>{" "}
-              继续完成。阁下亦可经由此取消订单。
+              继续完成或取消订单。
             </div>
           )}
         </div>
