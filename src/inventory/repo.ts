@@ -24,9 +24,29 @@ class Repository {
       id: 11,
       name: "夜光龙蛋 (不含水晶龙)",
       description: "用紫光灯照一下就会发光ヾ(@^▽^@)ノ 无紫光灯照射下为白色",
-      price: 16,
+      price: 24,
       tag: "normal",
       photo: prod8Jpg,
+    },
+    {
+      id: 12,
+      name: "4cm 龙宝宝摆件普通款",
+      description:
+        "小小一个捏在手里刚刚好，可以定制龙宝宝爪前面端着的字，此页面为普通款。不开口款前字为开运，开口款前字为暴富",
+      price: 6,
+      tag: "normal",
+      variants: ["开口", "不开口"],
+      photo: prod9Jpg,
+    },
+    {
+      id: 13,
+      name: "4cm 龙宝宝摆件定制款",
+      description:
+        "在开口和不开口的基础上可定制文字，限两个字，请在付款时留言备注定制的字，如遇留言框写不下，请添加MELLO-VOURRY说明ヾ(^▽^*)))",
+      price: 8,
+      tag: "normal",
+      variants: ["开口", "不开口"],
+      photo: prod9Jpg,
     },
     {
       id: 0,
@@ -144,26 +164,6 @@ class Repository {
         "小蜥蜴",
       ],
       photo: prod6Jpg,
-    },
-    {
-      id: 12,
-      name: "4cm 龙宝宝摆件普通款",
-      description:
-        "小小一个捏在手里刚刚好，可以定制龙宝宝爪前面端着的字，此页面为普通款。不开口款前字为开运，开口款前字为暴富",
-      price: 6,
-      tag: "normal",
-      variants: ["开口", "不开口"],
-      photo: prod9Jpg,
-    },
-    {
-      id: 13,
-      name: "4cm 龙宝宝摆件定制款",
-      description:
-        "在开口和不开口的基础上可定制文字，限两个字，请在付款时留言备注定制的字，如遇留言框写不下，请添加MELLO-VOURRY说明ヾ(^▽^*)))",
-      price: 8,
-      tag: "normal",
-      variants: ["开口", "不开口"],
-      photo: prod9Jpg,
     },
   ];
   find = (id: number) => {

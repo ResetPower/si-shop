@@ -42,9 +42,12 @@ export default function HomePage() {
         <div className="font-semibold">关于 3D 代打服务</div>
         <div className="text-sm">需要 3D 代打服务联系：MELLO-VOURRY</div>
         <div className="font-semibold">关于下单</div>
+        <div className="text-sm">
+          由于一些原因，历史订单和购物车被清除，但可以联系技术支持恢复
+        </div>
         <div className="text-sm">(｡ì _ í｡) (@^^)/~~~ (≧∇≦)</div>
         <div className="text-sm">
-          网站异常、误操作、误支付等任何问题有关网站和下单的疑问请联系：resetpower
+          网站异常、误操作、误支付等任何有关网站和下单的疑问及技术支持请联系：resetpower
         </div>
         <div className="text-sm">* 本公告中给出的联系方式均为微信号</div>
       </div>
