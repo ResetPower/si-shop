@@ -5,7 +5,7 @@ import prod2Jpg from "../assets/2.jpg";
 import prod3Jpg from "../assets/3.jpg";
 import prod4Jpg from "../assets/4.jpg";
 import prod5Jpg from "../assets/5.jpg";
-import prod6Jpg from "../assets/6.jpg";
+// import prod6Jpg from "../assets/6.jpg";
 import prod7Jpg from "../assets/7.jpg";
 import prod8Jpg from "../assets/8.jpg";
 import prod9Jpg from "../assets/9.jpg";
@@ -142,7 +142,7 @@ class Repository {
       tag: "normal",
       photo: prod5Jpg,
     },
-    {
+    /*{
       id: 9,
       name: `5cm 小动物系列`,
       description:
@@ -164,7 +164,7 @@ class Repository {
         "小蜥蜴",
       ],
       photo: prod6Jpg,
-    },
+    },*/
   ];
   find = (id: number) => {
     return this.products.find((prod) => prod.id === id);
