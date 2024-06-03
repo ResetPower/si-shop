@@ -4,10 +4,11 @@ import { CartItem } from "./cart";
 
 export interface Invoice {
   id: string;
-  payment: string | null;
+  identifier: string | null;
   items: CartItem[];
   total: number;
   userInfo: UserInfo;
+  date?: number;
 }
 
 class InvoiceStore {
@@ -18,14 +19,22 @@ class InvoiceStore {
       this.invoices = JSON.parse(saved).invoices;
     }
   }
-  add(payment: string | null, items: CartItem[], total: number): string {
+  add(identifier: string | null, items: CartItem[], total: number): string {
     const id = nanoid(16);
-    this.invoices.push({ id, payment, items, total, userInfo: userInfo });
+    this.invoices.push({
+      id,
+      identifier,
+      items,
+      total,
+      userInfo,
+      date: new Date().getTime(),
+    });
     this.saveChanges();
     return id;
   }
-  cancel(invoice: Invoice) {
+  remove(invoice: Invoice) {
     this.invoices = this.invoices.filter((inv) => inv !== invoice);
+    this.saveChanges();
   }
   find(id: string) {
     return this.invoices.find((inv) => inv.id === id);

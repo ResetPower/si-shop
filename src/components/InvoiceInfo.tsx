@@ -14,7 +14,10 @@ export default function InvoiceInfo(props: {
     <Fragment>
       <div>订单号：{inv.id}</div>
       <div>交易金额：&yen;{inv.total}</div>
-      <div>转账单号：{inv.payment ?? "未填写"}</div>
+      <div>特异性标识符：{inv.identifier ?? "未填写"}</div>
+      {inv.date && (
+        <div>下单时间：{new Date(inv.date).toLocaleString("zh-cn")}</div>
+      )}
       <div>
         下单信息：
         {grd === "1"

@@ -6,6 +6,7 @@ export default function Button(props: {
   children?: ReactNode;
   onClick?: MouseEventHandler;
   shallow?: boolean;
+  dangerous?: boolean;
 }) {
   return (
     <button
@@ -15,7 +16,9 @@ export default function Button(props: {
         "rounded flex items-center px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors",
         props.shallow
           ? "text-white bg-gray-500 hover:bg-gray-600 active:bg-gray-700"
-          : "text-white bg-blue-500 hover:bg-blue-600 active:bg-blue-700"
+          : props.dangerous
+            ? "text-white bg-red-500 hover:bg-red-600 active:bg-red-700"
+            : "text-white bg-blue-500 hover:bg-blue-600 active:bg-blue-700"
       )}
     >
       {props.children}

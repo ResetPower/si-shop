@@ -9,21 +9,22 @@ import InvoiceInfo from "../components/InvoiceInfo";
 export default function PurchasePage() {
   const params = useParams();
   const inv = invoices.find(params.id ?? String());
-  const [payment, setPayment] = useState(String());
+  const [identifier, setIdentifier] = useState(String());
   const [loading, setLoading] = useState(-1);
   const navigate = useNavigate();
 
-  const onCancel = () => {
-    inv && invoices.cancel(inv);
+  const onRemove = () => {
+    inv && invoices.remove(inv);
     navigate(-1);
   };
+  const onBack = () => navigate(-1);
 
   const onComplete = () => {
     if (inv) {
-      inv.payment = payment;
+      inv.identifier = identifier;
       fetch("https://server.si-hzyz.club/invoice", {
         method: "POST",
-        body: JSON.stringify(inv),
+        body: JSON.stringify({ ...inv, time: new Date().toLocaleString("zh") }),
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -42,17 +43,25 @@ export default function PurchasePage() {
     <div className="p-3">
       <InvoiceInfo invoice={inv} expand />
       <Input
-        value={payment}
-        onChange={setPayment}
-        placeholder="转账单号"
+        value={identifier}
+        onChange={setIdentifier}
+        placeholder="特异性标识符"
       ></Input>
       <div className="text-red-500">
-        扫描下方二维码后可点击赞赏金额下方的「其他金额」输入金额。
-        付款后请将转账单号准确无误地填写在上方文本框中并点击完成。
+        扫描下方二维码后可点击赞赏金额下方的「其他金额」输入金额，请勾选「向对方展示我的名字」。
+      </div>
+      <div className="text-sm">
+        <div>研究表明，赞赏码的转账单号对付款方和收款方并不统一。</div>
+        <div>
+          为帮助我们更好地确认订单支付情况，你可以选择在备注中留下有特殊意义的字符串并将其填入「特异性标识符」中，也可以在其中填入你的微信名，也可以在备注中留下自己的姓名班级。
+        </div>
       </div>
       <div className="flex flex-wrap mb-3 space-x-3">
-        <Button shallow onClick={onCancel}>
-          取消
+        <Button shallow onClick={onBack}>
+          返回
+        </Button>
+        <Button dangerous onClick={onRemove}>
+          删除订单
         </Button>
         <Button onClick={onComplete}>完成</Button>
         {loading === -2 && (

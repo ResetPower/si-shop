@@ -14,18 +14,16 @@ export default function InvoicePage() {
       {iv.map((inv, ind) => (
         <div className="p-3 m-3 border shadow rounded" key={ind}>
           <InvoiceInfo invoice={inv} />
-          {!inv.payment && (
-            <div>
-              此订单未完成，点击
-              <button
-                className="mx-1 text-blue-500 hover:underline"
-                onClick={() => navigate(`/purchase/${inv.id}`)}
-              >
-                https://si-hzyz.club/purchase/{inv.id}
-              </button>{" "}
-              继续完成或取消订单。
-            </div>
-          )}
+          <div>
+            可以点击
+            <button
+              className="mx-1 text-blue-500 hover:underline"
+              onClick={() => navigate(`/purchase/${inv.id}`)}
+            >
+              https://si-hzyz.club/purchase/{inv.id}
+            </button>{" "}
+            继续完成或取消订单。若订单已上传成功，请尽量不要重复上传。
+          </div>
         </div>
       ))}
     </div>
